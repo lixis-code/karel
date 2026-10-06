@@ -34,6 +34,8 @@ tant que pas regarde_ouest:
 tqdl
 tant que pas regarde_est:
     tourner_gauche
+si devant_bloque:
+    tourner_gauche
 tant que devant_libre:
     tqdl
     balise
