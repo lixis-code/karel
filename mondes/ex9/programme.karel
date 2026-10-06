@@ -11,18 +11,12 @@ definir demi_tour:
 definir compter_balise:
     tant que balise_ici:
         ramasser_balise
-    tourner_gauche
     poser_balise
     si sac_non_vide:
-        tourner_droite
-        tourner_droite
         poser_balise
         si sac_non_vide:
-            tourner_gauche
-            demi_tour
             poser_balise
             si sac_non_vide:
-                demi_tour
                 poser_balise
                 si sac_non_vide:
                     tant que sac_non_vide:
@@ -30,6 +24,12 @@ definir compter_balise:
                 sinon:
                     tant que balise_ici:
                         ramasser_balise
+            sinon:
+                demi_tour
+        sinon:
+            tourner_droite
+    sinon:
+        tourner_gauche
 
 tant que pas sac_non_vide:
     avancer
