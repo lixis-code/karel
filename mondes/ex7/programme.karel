@@ -1,8 +1,55 @@
 # Projet : Karel le jardinier
-tant que devant_libre:
-    si balise_ici:
+#aller dans un coin
+#une fois dans un coin, parcourir en zig zag
+#une fois dans un autre coin, arret
+
+#fonction
+definir tourner_droite:
+    repeter 3 fois:
+        tourner_gauche
+
+definir demi_tour: 
+    repeter 2 fois:
+        tourner_gauche
+
+definir balise:
+    tant que balise_ici:
         ramasser_balise
+
+
+definir tqdl:
+    tant que devant_libre:
+        si balise_ici:
+            ramasser_balise
+        sinon:
+            avancer
+
+
+#programme
+tant que pas regarde_sud:
+    tourner_gauche
+tqdl
+tant que pas regarde_ouest:
+    tourner_gauche
+tqdl
+tant que pas regarde_est:
+    tourner_gauche
+tant que devant_libre:
+    tqdl
+    balise
+    si regarde_est:
+        tourner_gauche
+        si devant_libre:
+            avancer
+            balise
+            tourner_gauche
     sinon:
-        avancer
-si balise_ici:
-    ramasser_balise
+        si regarde_ouest:
+            tourner_droite
+            si devant_libre:
+                avancer
+                balise
+                tourner_droite
+
+
+    
