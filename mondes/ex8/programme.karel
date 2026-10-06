@@ -1,1 +1,18 @@
 # Projet : Karel dans le labyrinthe
+#fonction
+definir tourner_droite:
+    repeter 3 fois:
+        tourner_gauche
+
+#programme
+tant que pas balise_ici:
+    si gauche_libre:
+        tourner_gauche
+        avancer
+    sinon:
+        si devant_bloque:
+            tourner_droite
+            avancer
+        sinon:
+            avancer
+ramasser_balise
