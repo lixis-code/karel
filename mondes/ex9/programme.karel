@@ -1,1 +1,33 @@
 # Projet final : la chasse au trésor
+
+definir tourner_droite:
+    repeter 3 fois:
+        tourner_gauche
+
+definir demi_tour: 
+    repeter 2 fois:
+        tourner_gauche
+
+definir compter_balise:
+    tant que balise_ici:
+        ramasser_balise
+    tourner_gauche
+    poser_balise
+    si sac_non_vide:
+        tourner_droite
+        tourner_droite
+        poser_balise
+        si sac_non_vide:
+            tourner_gauche
+            demi_tour
+            poser_balise
+            si sac_non_vide:
+                demi_tour
+
+tant que pas sac_non_vide:
+    avancer
+    tant que pas balise_ici:
+        avancer
+    compter_balise
+tant que balise_ici:
+    ramasser_balise
