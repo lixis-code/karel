@@ -5,6 +5,16 @@ definir tourner_droite:
         tourner_gauche
 
 #programme
+tant que pas regarde_sud:
+    tourner_gauche
+tant que devant_libre:
+    avancer
+tant que pas regarde_ouest:
+    tourner_gauche
+tant que devant_libre:
+    avancer
+tant que pas regarde_nord:
+    tourner_gauche
 tant que pas balise_ici:
     si gauche_libre:
         tourner_gauche
