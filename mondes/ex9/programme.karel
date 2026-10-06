@@ -23,11 +23,19 @@ definir compter_balise:
             poser_balise
             si sac_non_vide:
                 demi_tour
+                poser_balise
+                si sac_non_vide:
+                    tant que sac_non_vide:
+                        poser_balise
+                sinon:
+                    tant que balise_ici:
+                        ramasser_balise
 
 tant que pas sac_non_vide:
     avancer
     tant que pas balise_ici:
-        avancer
+        si devant_bloque:
+            demi_tour
+        sinon:
+            avancer
     compter_balise
-tant que balise_ici:
-    ramasser_balise
