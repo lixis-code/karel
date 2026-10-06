@@ -12,7 +12,9 @@ tant que pas balise_ici:
     sinon:
         si devant_bloque:
             tourner_droite
-            avancer
+            si devant_bloque:
+                tourner_droite
+                avancer
         sinon:
             avancer
 ramasser_balise
